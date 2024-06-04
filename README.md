@@ -29,6 +29,8 @@ This project involves analyzing data from a YouTube channel using the YouTube Da
 3) Engagement Metrics: Analyze the relationship between views, likes, and comments.
 4) Word Cloud: Generate a word cloud to visualize the most common words in video titles.
 5) Upload Day Analysis: Determine the distribution of video uploads by day of the week.
+6) Trend Analysis between view counts over time period.
+7) Correlation analysis between like counts,comment counts and View counts.
 
 ## Outcomes
 1) The Best performing video is Vijay Antony Sir Food Delivery | Vj Siddhu Vlogs | #shorts (6,000K views)
@@ -37,3 +39,6 @@ This project involves analyzing data from a YouTube channel using the YouTube Da
 4) Analysing relationship among likes and comments, it reveals a right skew, suggesting a small number of videos have much higher viewership than most.It suggests a strategic reason behind it (viral content).
 5) Analyzing video titles with a word cloud reveals prominent the keywords that can guide content strategy for appealing as suggestion for the users. The word cloud suggests content focuses on food, parties, and celebrities.
 6) The videos are most likely to be uploaded on wednesday, Monday and Friday of the week.
+7) The line graph shows an upward trend in view counts over time. The y-axis shows view count, labeled from 1 million to 6 million. The x-axis shows the published date, ranging from July 2023 to May 2024. The view count clearly increases over time.
+8) It suggests that there may be an inverse relationship between view count/like count and comment count, and a positive relationship between view count and like count.
+9) The selected features (durationSecs, commentCount, and likeCount) seem to be relevant predictors of view count, as evidenced by the high R² values. All three models achieved reasonable performance based on the R² metric.
