@@ -41,7 +41,7 @@ from nltk.corpus import stopwords
 # In[26]:
 
 
-api_key = 'AIzaSyCS8I0L5_DCXYiIF7ov9V29O2lo1ZVdHto' 
+api_key = 'your google api_key' 
 channel_ids = ["UCJcCB-QYPIBcbKcBQOTwhiA"]
 
 
