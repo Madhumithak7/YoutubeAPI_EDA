@@ -459,5 +459,8 @@ print('Gradient Boosting Regression:')
 print(f'Mean Squared Error: {mse_gbr:.2f}')
 print(f'R-squared: {r2_gbr:.2f}')
 
+# Outcomes of Linear Regression: Mean Squared Error: 492907000662.27, R-squared: 0.72
+# Outcomes of Random Forest Regression: Mean Squared Error: 410147098530.78, R-squared: 0.77
+# Gradient Boosting Regression: Mean Squared Error: 446135195489.33, R-squared: 0.75
 
 
