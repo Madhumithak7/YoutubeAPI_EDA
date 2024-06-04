@@ -34,8 +34,10 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from wordcloud import WordCloud
 from nltk.corpus import stopwords
-
-
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.metrics import mean_squared_error, r2_score
 # ## Set the API key and channel ID
 
 # In[26]:
@@ -388,7 +390,74 @@ ax = day_df.reset_index().plot.bar(x='index', y='publishDayName', rot=0)
 
 
 # In[ ]:
+## Trend analysis
+df= read_video_data_df
+# Assuming your dataset is stored in a DataFrame called 'df'
+df['publishedAt'] = pd.to_datetime(df['publishedAt'])
+df = df.sort_values('publishedAt')
 
+plt.figure(figsize=(12, 6))
+plt.plot(df['publishedAt'], df['viewCount'], marker='o')
+plt.title('Trend of View Counts Over Time')
+plt.xlabel('Published Date')
+plt.ylabel('View Count')
+plt.grid(True)
+plt.show()
+
+## correlation analysis
+correlation_matrix = df[['viewCount', 'likeCount', 'commentCount']].corr()
+print(correlation_matrix)
+
+features = ['durationSecs', 'commentCount', 'likeCount']
+target = 'viewCount'
+
+try:
+  # Select features and target variable using column names
+  X = df[features]
+  y = df[target]
+except KeyError as e:
+  print(f"Error: One or more features ({e.args[0]}) might be missing from your DataFrame.")
+
+# Proceed with your analysis or model training using X and y
+
+# Split data into training and testing sets (e.g., 80% train, 20% test)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# **Linear Regression**
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred_lin = lin_reg.predict(X_test)
+mse_lin = mean_squared_error(y_test, y_pred_lin)
+r2_lin = r2_score(y_test, y_pred_lin)
+
+
+# **Random Forest Regression**
+rf_reg = RandomForestRegressor(n_estimators=100, random_state=42)  # Adjust hyperparameters as needed
+rf_reg.fit(X_train, y_train)
+y_pred_rf = rf_reg.predict(X_test)
+mse_rf = mean_squared_error(y_test, y_pred_rf)
+r2_rf = r2_score(y_test, y_pred_rf)
+
+
+# **Gradient Boosting Regression**
+gbr_reg = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, random_state=42)  # Adjust hyperparameters as needed
+gbr_reg.fit(X_train, y_train)
+y_pred_gbr = gbr_reg.predict(X_test)
+mse_gbr = mean_squared_error(y_test, y_pred_gbr)
+r2_gbr = r2_score(y_test, y_pred_gbr)
+
+# Evaluate and compare models (choose the one with the best performance metrics)
+print('Linear Regression:')
+print(f'Mean Squared Error: {mse_lin:.2f}')
+print(f'R-squared: {r2_lin:.2f}')
+
+print('Random Forest Regression:')
+print(f'Mean Squared Error: {mse_rf:.2f}')
+print(f'R-squared: {r2_rf:.2f}')
+
+print('Gradient Boosting Regression:')
+print(f'Mean Squared Error: {mse_gbr:.2f}')
+print(f'R-squared: {r2_gbr:.2f}')
 
 
 
