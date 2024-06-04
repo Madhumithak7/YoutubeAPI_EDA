@@ -41,4 +41,24 @@ This project involves analyzing data from a YouTube channel using the YouTube Da
 6) The videos are most likely to be uploaded on wednesday, Monday and Friday of the week.
 7) The line graph shows an upward trend in view counts over time. The y-axis shows view count, labeled from 1 million to 6 million. The x-axis shows the published date, ranging from July 2023 to May 2024. The view count clearly increases over time.
 8) It suggests that there may be an inverse relationship between view count/like count and comment count, and a positive relationship between view count and like count.
-9) The selected features (durationSecs, commentCount, and likeCount) seem to be relevant predictors of view count, as evidenced by the high R² values. All three models achieved reasonable performance based on the R² metric.
+
+## Model Analysis
+
+#### Linear Regression:
+
+Mean Squared Error: 492907000662.27
+
+R-squared: 0.72
+
+#### Random Forest Regression:
+
+Mean Squared Error: 410147098530.78
+
+R-squared: 0.77
+
+#### Gradient Boosting Regression:
+
+Mean Squared Error: 446135195489.33
+
+R-squared: 0.75
+1) The selected features (durationSecs, commentCount, and likeCount) seem to be relevant predictors of view count, as evidenced by the high R² values. All three models achieved reasonable performance based on the R² metric.
