@@ -250,7 +250,7 @@ if uploads_playlist_id:
 
 
 # Save video data to Excel file
-excel_file_path = "/Users/madhumitha/Desktop/Data Science subject/youtubeapi/video_data.xlsx"
+excel_file_path = "/file path/Data Science subject/youtubeapi/video_data.xlsx"
 print(f"Saving video data to Excel file at '{excel_file_path}'...")
 video_data_df.to_excel(excel_file_path, index=False)
 print(f"Excel file saved to '{excel_file_path}'")
