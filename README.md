@@ -17,13 +17,23 @@ This project involves analyzing data from a YouTube channel using the YouTube Da
 4) Matplotlib & Seaborn: For data visualization.
 5) WordCloud: To create word cloud visualizations.
 6) NLTK: For natural language processing tasks like removing stop words.
+
 ## Data Preprocessing
 1) Convert columns to appropriate data types (e.g., numeric, datetime).
 2) Handle missing or inconsistent data.
 3) Create new features, such as the day of the week a video was published and the duration of videos in seconds.
+
 ## Exploratory Data Analysis (EDA)
 1) Best and Worst Performing Videos: Identify the videos with the highest and lowest view counts.
 2) View Distribution: Visualize the distribution of views across different videos.
 3) Engagement Metrics: Analyze the relationship between views, likes, and comments.
 4) Word Cloud: Generate a word cloud to visualize the most common words in video titles.
 5) Upload Day Analysis: Determine the distribution of video uploads by day of the week.
+
+## Outcomes
+1) The Best performing video is Vijay Antony Sir Food Delivery | Vj Siddhu Vlogs | #shorts (6,000K views)
+2) The least views video is Best Crackers testing video which got around 320k views
+3) While analysing view across different videos it shows a right skew, indicating a few videos have significantly higher view counts than most.
+4) Analysing relationship among likes and comments, it reveals a right skew, suggesting a small number of videos have much higher viewership than most.It suggests a strategic reason behind it (viral content).
+5) Analyzing video titles with a word cloud reveals prominent the keywords that can guide content strategy for appealing as suggestion for the users. The word cloud suggests content focuses on food, parties, and celebrities.
+6) The videos are most likely to be uploaded on wednesday, Monday and Friday of the week.
